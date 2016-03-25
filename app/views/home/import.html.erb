@@ -1,0 +1,45 @@
+<%- model_class = Orderfile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<div>
+<h3>Import a CSV File</h3>
+  <%= form_tag home_import_path, multipart: true do %>
+    <%= file_field_tag :file %> <br>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:projectcode) %></th>
+      <th><%= model_class.human_attribute_name(:projectname) %></th>
+      <th><%= model_class.human_attribute_name(:suppliername) %></th>
+
+      <th><%= model_class.human_attribute_name(:orderno) %></th>
+      <th><%= model_class.human_attribute_name(:orderitem) %></th>
+      <th><%= model_class.human_attribute_name(:orderqty) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orderfile.each do |orderfile| %>
+      <tr>
+        <td><%= orderfile.id %></td>
+        <td><%= orderfile.projectcode %></td>
+        <td><%= orderfile.projectname %></td>
+        <td><%= orderfile.suppliername %></td>
+ 
+        <td><%= orderfile.orderno %></td>
+        <td><%= orderfile.orderitem %></td>
+        <td><%= orderfile.orderqty %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  itemdescription: MyString
+  orderqty: 1
+  receivedqty: 1
+  remainingqty: 1
+  receivedby: MyString
+  order_id: 
+
+two:
+  itemdescription: MyString
+  orderqty: 1
+  receivedqty: 1
+  remainingqty: 1
+  receivedby: MyString
+  order_id: 

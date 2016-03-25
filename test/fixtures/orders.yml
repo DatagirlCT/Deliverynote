@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  orderno: MyString
+  orderdate: 2016-03-22 08:47:39
+  suppliername: MyString
+  orderstatus: MyString
+  project_id: 
+
+two:
+  orderno: MyString
+  orderdate: 2016-03-22 08:47:39
+  suppliername: MyString
+  orderstatus: MyString
+  project_id: 

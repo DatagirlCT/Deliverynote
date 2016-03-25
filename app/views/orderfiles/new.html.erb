@@ -1,0 +1,15 @@
+<%- model_class = Orderfile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+
+<div>
+<h3>Import a CSV File</h3>
+  <%= form_tag orderfiles_path, multipart: true do %>
+    <%= file_field_tag :file %> <br>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>
+
+
+

@@ -1,0 +1,31 @@
+<%- model_class = Orderfile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:projectcode) %>:</strong></dt>
+  <dd><%= @orderfile.projectcode %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:projectname) %>:</strong></dt>
+  <dd><%= @orderfile.projectname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:orderno) %>:</strong></dt>
+  <dd><%= @orderfile.orderno %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:orderdate) %>:</strong></dt>
+  <dd><%= @orderfile.orderdate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:suppliername) %>:</strong></dt>
+  <dd><%= @orderfile.suppliername %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:orderitem) %>:</strong></dt>
+  <dd><%= @orderfile.orderitem %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:orderqty) %>:</strong></dt>
+  <dd><%= @orderfile.orderqty %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              orderfiles_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_orderfile_path(@orderfile), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              orderfile_path(@orderfile),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
