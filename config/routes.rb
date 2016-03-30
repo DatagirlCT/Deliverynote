@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   
   resources :orderfiles
-  resources :order_items
-  resources :orders
+
   resources :projects
 
+  resources :orders do
+    resources :order_items
+  end
   
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  get 'home/assigntouser' => 'home/assigntouser'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

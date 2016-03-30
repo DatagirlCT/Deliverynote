@@ -11,6 +11,11 @@ class HomeController < ApplicationController
         end
    
     end
+
+  def assigntouser
+    @projects = Project.all
+    @users = User.all
+  end
   
     def index
         @orderfile = Orderfile.all

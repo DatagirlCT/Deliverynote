@@ -3,6 +3,23 @@
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 
+<div class="col-sm-6 col-sm-4-offset" >
+    <table class="table table-default">
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td style="border-top: none">
+              
+              <%= link_to order.orderno+' | '+order.suppliername+' ['+order.orderdate.to_s + ']',
+                      order_order_items_path(:order_id), :class => 'btn btn-block btn-info btn-lg' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+
+
 <table class="table table-striped">
   <thead>
     <tr>

@@ -7,11 +7,6 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
   
-  def assigntouser
-    @projects = Project.all
-    @users = User.all
-  end
-
   # GET /projects/1
   # GET /projects/1.json
   def show

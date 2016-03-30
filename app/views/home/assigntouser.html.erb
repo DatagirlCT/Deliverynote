@@ -1,0 +1,55 @@
+ <div class="col-sm-4 col-sm-4-offset" >
+    Select a project
+    <table class="table borderless">
+      <tbody>
+        <% @projects.each do |project| %>
+        <tr>
+          <td style="border-top: none">
+            <button type="button" class="btn-block btn-info btn-lg"><%= project.name+'|'+project.code %></button>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+ </div>
+
+
+<div class="col-sm-4 col-sm-4-offset" >
+    Select a user
+    <table class="table table-default">
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td style="border-top: none">
+              <button type="button" class="btn-block btn-info btn-lg"><%= user.email %></button>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+  
+    
+    <div class="col-sm-4 col-sm-2-offset" >
+        Select a user
+        <table class="table table-default">
+          
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td style="border-top: none", class: "radiobutton">
+                    <%= radio_button_tag(:user_id, user.id, class: "radiobutton") %>
+                    <%= label_tag(:user_user_id, user.email, class: "radiobutton")  %>
+
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+    
+
+    <%= link_to t('.assign', :default => t("helpers.links.assign")),
+                projects_path,
+                :class => 'btn btn-primary' %>
+       
